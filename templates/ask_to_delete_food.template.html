@@ -1,0 +1,14 @@
+{%extends 'base.template.html' %}
+
+{%block pagetitle%}Delete Food Entry{% endblock %}
+
+{%block content%}
+<div class = "alert alert-danger mt-5">
+    <form method = "POST">
+        Are you sure you want to delete this food entry : {{food.food_name}} with ID {{food.id}}?
+        <br/>
+        <input type="submit" class = "btn btn-danger" value="Yes"/>
+        <a href="{{url_for('show_food_list')}}" class = "btn btn-success">No</a>
+    </form>
+</div>
+{%endblock%}

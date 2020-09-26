@@ -1,0 +1,46 @@
+{% extends 'base.template.html' %} 
+
+{% block pagetitle %} Food Tracking App {%endblock %} 
+
+{% block content%}
+
+<h1 class="mt-5">What did you eat? Record it now.</h1>
+<form method="POST">
+  <div class="col-6">
+    <div class="form-group">
+      <label>Food Name</label>
+      <input type="text" class="form-control" name="food_name" />
+    </div>
+    <div class="form-group">
+      <label>Number of Calories</label>
+      <input type="number" class="form-control" name="num_calories" />
+    </div>
+    <div class="form-group">
+      <label>Meal of the Day</label> <br />
+      <input type = "radio" id="breakfast" name="type_of_meal" value="breakfast"> Breakfast
+      <br>
+      <input type="radio" id="lunch" name="type_of_meal" value="lunch">
+      Lunch <br>
+      <input type="radio" id="dinner" name="type_of_meal" value="dinner">
+      Dinner <br>
+      <input type="radio" id="snack" name="type_of_meal" value="snack">
+      Snack <br>
+      <!-- <select class="form-control" name="type_of_meal">
+        <option>Breakfast</option>
+        <option>Lunch</option>
+        <option>Dinner</option>
+        <option>Snack</option>
+      </select> -->
+    </div>
+    <div class="form-group">
+      <label>Date</label>
+      <input type="text" class="form-control" name="date" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create Record</button>
+  </div>
+</form>
+<div class="mt-5">
+<a href="{{ url_for('show_food_list')}}" class="btn btn-primary">See my list</a>
+</div>
+{%endblock%}
